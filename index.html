@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Someone Special</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #container {
+      width: 90%;
+      max-width: 600px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #c2185b;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 1rem;
+      background-color: #f06292;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      margin: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="scene1">
+      <h1>“You know you're in love when you can't fall asleep...” 💭</h1>
+      <p>Hey love, I made something just for you. A little journey through our memories 💌</p>
+      <button onclick="nextScene('scene2')">Start Our Story</button>
+    </div>
+
+    <div id="scene2" class="hidden">
+      <h1>Do you know how we met?</h1>
+      <button onclick="nextScene('scene3')">A. Yes</button>
+      <button onclick="nextScene('scene3')">B. No</button>
+    </div>
+
+    <div id="scene3" class="hidden">
+      <h1>Do you remember the coffin? ⚰️</h1>
+      <button onclick="nextScene('scene4')">A. Yes</button>
+      <button onclick="nextScene('scene4')">B. No</button>
+    </div>
+
+    <div id="scene4" class="hidden">
+      <h1>That day when Shivam called you in front of my house…</h1>
+      <p>And what I wanted to say… do you remember?</p>
+      <button onclick="nextScene('scene5')">A. Yes</button>
+      <button onclick="nextScene('scene5')">B. Nope</button>
+    </div>
+
+    <div id="scene5" class="hidden">
+      <h1>I wanted to say this in person…</h1>
+      <p>But you're far away right now, and I couldn't wait any longer to tell you this.</p>
+      <button onclick="nextScene('scene6')">Continue</button>
+    </div>
+
+    <div id="scene6" class="hidden">
+      <h1>This is me…</h1>
+      <p>I'm not great at saying things face-to-face… I’m shy, I overthink.<br><br>
+         But I built this page because my heart needs you to know what’s inside it.</p>
+      <button onclick="nextScene('scene7')">Okay, now tell me 💖</button>
+    </div>
+
+    <div id="scene7" class="hidden">
+      <h1>Will you accept my proposal? 💍</h1>
+      <p>If your answer is YES…</p>
+      <p><strong>Send me a big YES on WhatsApp 💬</strong></p>
+      <a href="https://wa.me/9798325869?text=YES%20I%20WILL!" target="_blank">
+        <button style="background-color: #25D366;">Send YES on WhatsApp</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function nextScene(id) {
+      document.querySelectorAll("#container > div").forEach(div => div.classList.add("hidden"));
+      document.getElementById(id).classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
